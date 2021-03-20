@@ -7,9 +7,18 @@ const app = Vue.createApp({
             amount: 8,
             details: ['20% cotton', '30% wool', '50% polyester'],
             variants: [
-                {id: 2234, color: 'green'},
-                {id: 2235, color: 'blue'}
-            ]
+                {id: 2234, color: 'green', image: './assets/images/socks_green.jpg'},
+                {id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg'}
+            ],
+            cart: 0
         }
-    }
+    },
+    methods: {
+        addCart() {
+            this.cart += 1;
+        },
+        updateImage(variantImage) {
+            this.image = variantImage;
+        }
+    },
 })
